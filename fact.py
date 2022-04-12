@@ -22,9 +22,10 @@ N = sudoku.pop(0)
 r = 0
 nums = list()
 for i in sudoku:
-    for j in i:
+    for j in range(r,r+3):
+        while (r+3)<=N[0]:
+            nums.append('lol')
+            r=+3
         for j in range(r,r+3):
-            while (r+3)<=N[0]:
-                nums.append(j)
-                r=+3
+            pass
 print(nums)
