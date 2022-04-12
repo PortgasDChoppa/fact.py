@@ -19,10 +19,18 @@ for line in f:
 N = sudoku.pop(0)
 
 #Iterate over the contents of the nested lists to create a new list with the sudoku block
-r = 0
-nums = list()
-for i in sudoku:
-    while r+3<=N[0]:
-        nums.append(i[r:r+3])
-        r = r+3
-print(nums)
+flag = 0
+nums = []
+while len(sudoku)>=3 and flag==0:
+    r = 0
+    for i in sudoku:
+    while i in range(0,3):
+        for j in i:
+            if j in range(r,r+3):
+                nums.append([i][j])
+    r=+3
+    for i in nums:
+        if len(nums)==len(set(nums))
+            flag = 0
+        else:
+            flag = 1
