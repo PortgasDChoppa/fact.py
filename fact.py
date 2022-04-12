@@ -17,25 +17,14 @@ for line in f:
     sudoku.append(line)
 #Take the sudoku size from the list
 N = sudoku.pop(0)
-multiples = N[0]/3
-#Create a list with all the numbers in the nested list
-nums = []
-flag=0
-for i in range(0, len(sudoku)):
-    for j in range(0, len(sudoku)):
-        nums.append(sudoku[i][j])
 
-#Count the number of times a number is present on the list
-for i in nums:
-    if i in range(1,10):               #Check if the numbers are from 1 to 9
-        if nums.count(i) > multiples:  #Check for repetition
-            flag=0
-        else:
-            flag=1
-    else:
-       flag=0
-#If the count is equal to one, the sudoku is valid
-if flag==1:
-    print('True')
-else:
-    print('False')
+#Iterate over the contents of the nested lists to create a new list with the sudoku block
+r = 0
+nums = list()
+for i in sudoku:
+    for j in i:
+        for j in range(r,r+3):
+            while (r+3)<=N[0]:
+                nums.append(j)
+                r=+3
+print(nums)
