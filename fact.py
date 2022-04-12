@@ -20,17 +20,26 @@ N = sudoku.pop(0)
 
 #Iterate over the contents of the nested lists to create a new list with the sudoku block
 flag = 0
-nums = []
 while len(sudoku)>=3 and flag==0:
     r = 0
-    for i in sudoku:
-    while i in range(0,3):
-        for j in i:
-            if j in range(r,r+3):
-                nums.append([i][j])
-    r=+3
-    for i in nums:
-        if len(nums)==len(set(nums))
-            flag = 0
-        else:
-            flag = 1
+    while r+3<=int(N[0]) and flag==0:
+        nums = []
+        for i in range(0, 3):
+            for j in range(0+r, r+3):
+                nums.append(sudoku[i][j])
+        for i in nums:
+            if i in range(1, 10):
+                if (i in set(nums)) and len(nums) == len(set(nums)) and flag==0:
+                    flag = 0
+                else:
+                    flag = 1
+            else:
+                flag = 1
+        r=r+3
+    del sudoku[0:3]
+
+if flag==0:
+    print('True')
+else:
+    print('False')
+
