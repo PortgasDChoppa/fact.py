@@ -24,6 +24,18 @@ flag=0
 for i in range(0, len(sudoku)):
     for j in range(0, len(sudoku)):
         nums.append(sudoku[i][j])
-#Calculate the number of times a number should be seen in the code
+
 #Count the number of times a number is present on the list
-#If the count is equal to one, the count is true, else, is false
+for i in nums:
+    if i in range(1,10):               #Check if the numbers are from 1 to 9
+        if nums.count(i) > multiples:  #Check for repetition
+            flag=0
+        else:
+            flag=1
+    else:
+       flag=0
+#If the count is equal to one, the sudoku is valid
+if flag==1:
+    print('True')
+else:
+    print('False')
